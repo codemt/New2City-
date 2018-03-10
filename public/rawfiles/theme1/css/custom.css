@@ -1,0 +1,29 @@
+/*  background image styles  ...*/
+#intro
+{
+  background:url(../img/mumbai3.jpg);
+  background-size: cover;
+  color:#fff;
+
+}
+#contact
+{
+  background:url(../img/mumbai2.jpg);
+  background-size: cover;
+  color:#fff;
+
+}
+#services
+{
+  background:url(../img/mumbai1.jpg);
+  background-size: cover;
+  color:#fff;
+
+}
+#about
+{
+  background:url(../img/mumbai1.jpg);
+  background-size: cover;
+  color:#fff;
+  
+}
