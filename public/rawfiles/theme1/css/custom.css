@@ -11,6 +11,7 @@
   background:url(../img/mumbai2.jpg);
   background-size: cover;
   color:#fff;
+  margin-top: auto;
 
 }
 #services
@@ -25,5 +26,5 @@
   background:url(../img/mumbai1.jpg);
   background-size: cover;
   color:#fff;
-  
+
 }

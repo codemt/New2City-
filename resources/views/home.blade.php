@@ -74,7 +74,7 @@
                 <div class="col-lg-12">
                     <h1>New in Mumbai - Find a Guide to Help you Out.</h1>
                     <p><strong> Every Person </strong> Who comes to mumbai has issues at first in the mumbai , we are here to solve those issues.</p>
-                    <a class="btn btn-default page-scroll" href="{{  url('guideform') }}"">Click to Fill Guide Form!</a>
+                    <a class="btn btn-default page-scroll" href="{{  url('guideform') }}""> Click to Fill Guide Form!</a>
                 </div>
             </div>
         </div>

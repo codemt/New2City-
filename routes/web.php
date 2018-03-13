@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 Route::get('home','HomeController@index')->name('home');
 Route::get('guideform','HomeController@getform')->name('guideform');
+Route::post('storeformvalues','HomeController@fetchdata')->name('storeformvalues');

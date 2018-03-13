@@ -14,6 +14,12 @@
     <!-- Bootstrap Core CSS -->
     <link href="{{ URL::asset('rawfiles/theme1/css/bootstrap.min.css') }}" rel="stylesheet">
       <link href="{{ URL::asset('rawfiles/theme1/css/custom.css') }}" rel="stylesheet">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,80">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+   <link rel="stylesheet" href="{{ URL::asset('rawfiles/theme1/css/JLX-Contact-Form-with-Placeholder-FI.css') }}">
+   <link rel="stylesheet" href="{{ URL::asset('rawfiles/theme1/css/Responsive-Form.css') }}">
+   <link rel="stylesheet" href="{{ URL::asset('rawfiles/theme1/css/Responsive-Form1.css') }}">
+   <link rel="stylesheet" href="{{ URL::asset('rawfiles/theme1/css/styles.css')}}">
 
     <!-- Custom CSS -->
     <link href="{{ URL::asset('rawfiles/theme1/css/scrolling-nav.css') }}" rel="stylesheet">
@@ -41,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top"> New 2 Mumbai </a>
+                <a class="navbar-brand page-scroll" href="{{ url('home') }}"> New 2 Mumbai </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -67,13 +73,50 @@
         <!-- /.container -->
     </nav>
 
-<section id="form">
-  
+  <!-- Intro Section -->
+  <div  id="contact" class="contact-clean">
+      <form method="post" action="storeformvalues">
+            {{ csrf_field() }}
+          <h2 class="text-center"> Share With us Some Details </h2>
+          <div class="form-group has-success has-feedback">
+              <input class="form-control" type="text" name="name" placeholder="Name"><i class="form-control-feedback glyphicon glyphicon-ok" aria-hidden="true"></i></div>
+          <div class="form-group has-error has-feedback">
+              <input class="form-control" type="email" name="email" placeholder="Email"><i class="form-control-feedback glyphicon glyphicon-remove" aria-hidden="true"></i>
+              <p class="help-block">Please enter a correct email address.</p>
+          </div>
+          <div class="form-group has-success has-feedback">
+              <input class="form-control" type="text" name="mobile" placeholder="Mobile"><i class="form-control-feedback glyphicon glyphicon-ok" aria-hidden="true"></i></div>
+          <div class="form-group">
+            <label for="exampleSelect1">Reason of Visting the City?</label>
+            <select class="form-control" id="exampleSelect1">
+              <option>Job</option>
+              <option>Business</option>
+              <option>Marraige</option>
+              <option>Concert</option>
+              <option>Family</option>
+            </select>
+          </div>          
+          <div class="form-group">
+              <textarea class="form-control" rows="14" name="message" placeholder="Mention Details!! "></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleSelect1">Need Accomodation ?</label>
+            <select class="form-control" id="exampleSelect1">
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+              <button class="btn btn-primary" type="submit"> SUBMIT </button>
+          </div>
+      </form>
+  </div>
+
+    
 
 
 
-
-</section>
 
     <!-- jQuery -->
     <script src="{{ URL::asset('rawfiles/theme1/js/jquery.js') }}"></script>
