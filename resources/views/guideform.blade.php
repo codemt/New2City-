@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="{{ url('home') }}"> New 2 Mumbai </a>
+                <a class="navbar-brand page-scroll" href="{{ url('/') }}"> New 2 Mumbai </a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
