@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -25,16 +25,47 @@ class HomeController extends Controller
     public function fetchdata(Request $request)
     {
 
-        $formdata =  $request->all();
+        $validatedData = $request->validate([
+            'name' => 'required|max:25',
+            'email' => 'required',
+            'mobile' => 'required',
+        ]);
 
+       // $formdata =  $request->all();
+       $name = $request->input('name');
+       $email = $request->input('email');
+       $message = $request->input('message');
+       $mobile = $request->input('mobile');
+       $reason = $request->input('reason');
+
+
+           // $info = array($name,$email,$message,$mobile,$reason);
+           $data = [
+
+            'title'=>'New Inquiry Received',
+            'name'=>$name,
+            'email'=>$email,
+            'message'=>$message,
+            'mobile'=>$mobile,
+            'reason'=>$reason
+
+     ];
         echo "</pre>";  
-        var_dump($formdata);
-        // Mail::send(['text'=>'mail'],['name','Sarthak'],function($messege){
+        //var_dump($data);
 
-        //          $messege->to('mithilesh.tarkar@gmail.com','Hello Man')->subject('Test Email');
-        //          $messege->from('mythilmeshram@gmail.com','MV Tech');     
+        Mail::send('email.test',$data,function($message){
 
+
+            $message->to('mithilesh.tarkar@gmail.com','Mithilesh')->subject('Hello From Team');
+
+         });
+         return view('home');
+        // Mail::raw('New Inquiry Received', function ($message){
+
+        //     $message->to('mithilesh.tarkar@gmail.com','Mithilesh')->subject('New Inquiry Received');
         // });
+
+
 
     }
   

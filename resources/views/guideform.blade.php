@@ -77,6 +77,15 @@
   <div  id="contact" class="contact-clean">
       <form method="post" action="storeformvalues">
             {{ csrf_field() }}
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
           <h2 class="text-center"> Share With us Some Details </h2>
           <div class="form-group has-success has-feedback">
               <input class="form-control" type="text" name="name" placeholder="Name"><i class="form-control-feedback glyphicon glyphicon-ok" aria-hidden="true"></i></div>
@@ -88,7 +97,7 @@
               <input class="form-control" type="text" name="mobile" placeholder="Mobile"><i class="form-control-feedback glyphicon glyphicon-ok" aria-hidden="true"></i></div>
           <div class="form-group">
             <label for="exampleSelect1">Reason of Visting the City?</label>
-            <select class="form-control" id="exampleSelect1">
+            <select class="form-control" name="reason" id="exampleSelect1">
               <option>Job</option>
               <option>Business</option>
               <option>Marraige</option>
@@ -97,7 +106,7 @@
             </select>
           </div>          
           <div class="form-group">
-              <textarea class="form-control" rows="14" name="message" placeholder="Mention Details!! "></textarea>
+              <textarea class="form-control" rows="14" name="message" placeholder="Mention Details!! "> </textarea>
           </div>
           <div class="form-group">
             <label for="exampleSelect1">Need Accomodation ?</label>
