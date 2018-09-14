@@ -59,12 +59,13 @@ class HomeController extends Controller
             $message->to('mithilesh.tarkar@gmail.com','Mithilesh')->subject('Hello From Team');
 
          });
-         return view('home');
-        // Mail::raw('New Inquiry Received', function ($message){
+        //   Mail::raw('Hi, We have received your inquiry and we will get back to you soon.',$email,$name, function ($message){
 
-        //     $message->to('mithilesh.tarkar@gmail.com','Mithilesh')->subject('New Inquiry Received');
+        //     $message->to($email,$name)->subject('Thank you for the Inquiry, We will Contact you Soon');
         // });
 
+         return view('home');
+       
 
 
     }
