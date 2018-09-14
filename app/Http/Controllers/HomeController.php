@@ -35,6 +35,7 @@ class HomeController extends Controller
        $name = $request->input('name');
        $email = $request->input('email');
        $message = $request->input('message');
+      // $stringmessage = (string)$message;
        $mobile = $request->input('mobile');
        $reason = $request->input('reason');
 
