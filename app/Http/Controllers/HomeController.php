@@ -60,6 +60,13 @@ class HomeController extends Controller
             $message->to('mithilesh.tarkar@gmail.com','Mithilesh')->subject('Hello From Team');
 
          });
+         // mail to the user field email 
+        Mail::send('email.inquiry',$data,function($message) use ($email){
+
+
+            $message->to($email,'User')->subject('Thank you for Inquiring!!');
+
+         });
         //   Mail::raw('Hi, We have received your inquiry and we will get back to you soon.',$email,$name, function ($message){
 
         //     $message->to($email,$name)->subject('Thank you for the Inquiry, We will Contact you Soon');
